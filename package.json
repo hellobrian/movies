@@ -1,0 +1,11 @@
+{
+  "name": "movies",
+  "version": "1.0.0",
+  "description": "learning CRUD apps with express and mongoose",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Han",
+  "license": "MIT"
+}
