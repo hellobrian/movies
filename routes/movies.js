@@ -20,4 +20,24 @@ router.route('/movies')
       }
       res.send({ message: 'Movie Added' });
     });
-  })
+  });
+
+router.route('/movies/:id')
+  .put(function(req, res) {
+    Movie.findOne({ _id: req.params.id }, function(err, movie) {
+      if (err) {
+        return res.send(err);
+      }
+
+      for (prop in req.body) {
+        movie[prop] = req.body[prop];
+      }
+
+      movie.save(function(err) {
+        if (err) {
+          return res.send(err);
+        }
+        res.json({ message: 'Movie updated!' });
+      });
+    });
+  });
