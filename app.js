@@ -10,3 +10,10 @@ var dbName = 'movieDB';
 var connectString = 'mongodb://localhost:27107' + dbName;
 
 mongoose.connect(connectionString);
+
+// configure body-parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use('/api', movies); 
+
+module.exports = app;
