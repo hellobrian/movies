@@ -57,3 +57,5 @@ router.route('/movies/:id')
       res.json({ message: 'Successfully deleted' });
     });
   });
+
+module.exports = router;
