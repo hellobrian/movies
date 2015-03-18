@@ -23,6 +23,14 @@ router.route('/movies')
   });
 
 router.route('/movies/:id')
+  .get(function(req, res) {
+    Movie.findOne({ _id: req.params.id }, function(err, movie) {
+      if (err) {
+        return res.send(err);
+      }
+      res.json(movie);
+    });
+  })
   .put(function(req, res) {
     Movie.findOne({ _id: req.params.id }, function(err, movie) {
       if (err) {
@@ -39,5 +47,13 @@ router.route('/movies/:id')
         }
         res.json({ message: 'Movie updated!' });
       });
+    });
+  })
+  .delete(function(req, res) {
+    Movie.remove({ _id: req.params.id }, function(err, movie) {
+      if (err) {
+        return res.send(err);
+      }
+      res.json({ message: 'Successfully deleted' });
     });
   });
