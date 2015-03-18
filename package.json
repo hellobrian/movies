@@ -4,6 +4,7 @@
   "description": "learning CRUD apps with express and mongoose",
   "main": "app.js",
   "scripts": {
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Brian Han",
